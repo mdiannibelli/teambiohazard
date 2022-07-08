@@ -21,3 +21,4 @@ var Slider = function() {
         sliders[currentElement-1]. classList.toggle("slider__body--show");
     }
 }
+Slider();
