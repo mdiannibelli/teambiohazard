@@ -90,7 +90,7 @@
 .logo {
     width: 20%;
     height: 65px;
-    position: fixed;
+    position: absolute;
     
 }
 
@@ -101,30 +101,26 @@
     
 }
 
-.container {
-    width: 1500px;
-    min-height: 80vh;
-    max-width: 1500px;
-    margin: 0 auto;
-    overflow: hidden;
-}
+
+
+
 
 .slider {
     background-color: #0f0f0f;
-    
-    
+    padding-bottom: 35px;
 }
 
-.slider__container {
+ .slider__container {
     display: grid;
-    grid-template-columns: 40px 1400px 40px;
+    grid-template-columns: 30px 1fr 30px;
     align-items: center;
     padding: 0px;
-    margin-inline-start: 150px;
+    margin-inline-start: 160px;
     
-}
+    
+} 
 
-.slider__body {
+ .slider__body {
     grid-column: 2/3;
     grid-row: 1/2;
     opacity: 0;
@@ -141,7 +137,7 @@
 }
 
 .slider__img {
-    width: 1400px;
+    
     height: 600px;
     object-fit: cover;
     
@@ -155,5 +151,40 @@
 
 .slider__arrow:nth-of-type(2) {
     justify-self: end;
+} 
+
+
+
+.sponsor {
+    display: inline-block;
+    position: relative;
 }
+
+.sponsors__img {
+    width: 100%;
+}
+
+
+.sponsors_container {
+    display: flex;
+}
+
+.sponsors  {
+    position: absolute;
+    display: flex;
+    top: 80px;
+    gap: 10px;
+    left: 65px;
+}
+
+.imgsponsors {
+    list-style: none;
+}
+
+.imgsponsors img:hover {
+    transform: scale(1.15);
+}
+
+
+
 
