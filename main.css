@@ -162,6 +162,7 @@ body {
 .sponsor {
     display: inline-block;
     position: relative;
+    overflow: hidden;
 }
 
 .sponsors__img {
@@ -216,7 +217,7 @@ body {
 .videosyt {
     padding-top: 30px;
     padding-bottom: 40px;
-    width: 1720px;
+    width: 1760px;
     overflow: hidden;
     margin: auto;
 }
@@ -227,6 +228,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
     justify-items: center;
+}
+
+.videosmedia {
+    border: rgba(47,4,4, 0.7) 8px solid;
 }
 
 .archievements {
@@ -274,3 +279,28 @@ body {
         transform: translateX(calc(-200px * 5))
     }
 }
+
+.players {
+    display: flex;
+    margin: 60px auto 20px;
+}
+
+.players_container {
+    position: relative;
+    overflow: hidden;
+}
+
+.button_container {
+    margin: auto;
+}
+
+.button_container a {
+    position: absolute;
+    top: 550px;
+    display: flex;
+    left: 450px;
+    height: 40px;
+    width: 112px;
+    
+}
+
