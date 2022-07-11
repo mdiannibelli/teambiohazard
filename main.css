@@ -112,6 +112,7 @@ body {
 .slider {
     background-color: #0f0f0f;
     padding-bottom: 35px;
+    overflow: hidden;
 }
 
  .slider__container {
@@ -193,6 +194,7 @@ body {
 
 .videos {
     margin-top: 50px;
+    overflow: hidden;
 }
 
 .videostext {
@@ -304,3 +306,120 @@ body {
     
 }
 
+.footer {
+    position: relative;
+    padding-top: 80px;
+    background-color: #2f0404;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.logoform {
+    width: 220px;
+    height: 240px;
+    padding-bottom: 10px;
+}
+
+.mediafooter {
+    display: grid;
+}
+
+.iconsfooter {
+    position: relative;
+    display: grid;
+    grid-template-columns: 75px 75px;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    text-align: center;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.iconsfooter a {
+    color: white;
+    margin: 10px;
+}
+
+.footertext {
+   padding-right: 80px;
+   overflow: hidden;
+}
+
+.footertittle {
+    font-family: 'Roboto', sans-serif;
+    color: #e90404;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.footerul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerul li {
+    height: 45px;
+}
+
+.footerul li a {
+    font-family: 'Roboto', sans-serif;
+    color: #acacac;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.footerul li a:hover {
+    color: #e90404;
+}
+
+.footerul p {
+    font-family: 'Roboto', sans-serif;
+    color: #acacac;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 480px;
+}
+
+.v-line {
+    border-right: 1px solid #e90404;
+    height:90%;
+}
+
+.tail {
+    background-color: #000000;
+    color: #999;
+    font-size: .8125rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+  }
+
+.tail_container {
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 540px 540px;
+    justify-content: space-between;
+    justify-items: end;
+    align-items: center;
+}
+  
+  .tail span a {
+    color: #acacac;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    text-decoration: none;
+    text-transform: uppercase;
+    word-spacing: 0.25em;
+  }
+
+.tail .tail_container .ptail p {
+    margin-bottom: 0;
+}
