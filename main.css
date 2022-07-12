@@ -489,6 +489,10 @@ body {
     margin-right: auto;
 }
 
+.prodductimg img {
+    position: relative;
+}
+
 .ulProducts {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -531,4 +535,95 @@ body {
     width: 120px;
     margin: auto;
     padding-bottom: 10px;
+}
+
+.hiddencontent {
+    display: grid;
+    grid-template-columns: 1fr 100px 90px;
+    justify-items: center;
+    z-index: 1;
+    background-color: #0f0f0f;
+    opacity: 0.9;
+    padding: 44px 40px;
+    position: absolute;
+    visibility: hidden;
+    width: 300px;
+}
+
+.hiddencontent2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    z-index: 1;
+    background-color: #0f0f0f;
+    opacity: 0.9;
+    padding: 34px 40px;
+    position: absolute;
+    visibility: hidden;
+    width: 300px;
+    height: 72%;
+}
+
+.hiddencontent2 h4 {
+    text-align: center;
+    font-size: 'Roboto Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: #660404;
+}
+
+.hiddencontent h3 {
+    font-size: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #660404;
+}
+
+.hiddencontent h4 {
+    font-size: 'Roboto Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: #660404;
+}
+
+.prodductimg:hover > .hiddencontent {
+    visibility: visible;
+}
+
+.prodductimg:hover > .hiddencontent2 {
+    visibility: visible;
+}
+
+
+.prodductimg:hover {
+    transform: scale(1.15);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.pagination ul {
+    list-style: none;
+    text-align: center;
+}
+
+.pagination ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.pagination ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #660404;
+    text-decoration: none;
+    color: #999;
+}
+
+.pagination ul li a:hover {
+    background-color: #999;
+    color: #2f0404;
 }
