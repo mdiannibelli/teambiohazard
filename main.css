@@ -469,6 +469,17 @@ body {
     color: #e90404;
 }
 
+.minicart {
+    display: flex;
+    align-items: center;
+}
+
+.minicart h3 {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    color: #e90404;
+}
+
 .minicart i {
     color: white;
     font-size: 1.2rem;
@@ -480,7 +491,7 @@ body {
 }
 
 .minicart h4 {
-    font-size: 0.5em;
+    font-size: 0.5rem;
 }
 
 .products {
@@ -627,3 +638,15 @@ body {
     background-color: #999;
     color: #2f0404;
 }
+
+.btn {
+    --bs-btn-padding-x: 0.15rem;
+    --bs-btn-padding-y: 0.075rem;
+    --bs-btn-bg: #660404;
+    --bs-btn-border-color: #660404;
+    --bs-btn-hover-bg: #0f0f0f;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-border-color: white;
+    --bs-btn-border-width: 0px;
+}
+
