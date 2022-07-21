@@ -1,6 +1,6 @@
 // Cart 
 
-const items1 = [
+const items = [
 
     {
         "id": 1,
@@ -128,14 +128,11 @@ const items1 = [
         <h4>79cm</h4>
         <h4>64cm</h4>
         `
-    }
-]
-
-const items2 = [
+    },
     {
         "id": 7,
         "name": "Black Hoodie",
-        "img": "../imgs/BlackHoodie.jpg",
+        "img": "./imgs/BlackHoodie.jpg",
         "price": 21.00,
         "amount": 1,
         "content": "hiddencontent",
@@ -163,7 +160,7 @@ const items2 = [
     {
         "id": 8,
         "name": "White Hoodie",
-        "img": "../imgs/WhiteHoodie.jpg",
+        "img": "./imgs/WhiteHoodie.jpg",
         "price": 21.00,
         "amount": 1,
         "content": "hiddencontent",
@@ -191,7 +188,7 @@ const items2 = [
     {
         "id": 9,
         "name": "Jacket",
-        "img": "../imgs/Jacket.jpg",
+        "img": "./imgs/Jacket.jpg",
         "price": 46.00,
         "amount": 1,
         "content": "hiddencontent",
@@ -219,7 +216,7 @@ const items2 = [
     {
         "id": 10,
         "name": "Drink Ware",
-        "img": "../imgs/Drinkware.jpg",
+        "img": "./imgs/Drinkware.jpg",
         "price": 5.50,
         "amount": 1,
         "content": "hiddencontent2",
@@ -233,7 +230,7 @@ const items2 = [
     {
         "id": 11,
         "name": "Keychain",
-        "img": "../imgs/Keychain.jpg",
+        "img": "./imgs/Keychain.jpg",
         "price": 2.00,
         "amount": 1,
         "content": "hiddencontent2",
@@ -247,7 +244,7 @@ const items2 = [
     {
         "id": 12,
         "name": "Pin",
-        "img": "../imgs/Pin.jpg",
+        "img": "./imgs/Pin.jpg",
         "price": 1.50,
         "amount": 1,
         "content": "hiddencontent2",
@@ -261,15 +258,14 @@ const items2 = [
 ]
 
 const cart = [];
-
 let total = 0;
 
-function renderProducts1() {
+function renderProducts() {
     const shop = document.getElementById("shop");
-    
-    items1.forEach((p) =>{
-       let productHTML = `
-       <li class="prodductimg">
+    items.forEach((p) => {
+        const productHTML = document.createElement("li");
+        productHTML.classList.add("prodductimg");
+      productHTML.innerHTML = `
             <div class=${p.content}>
                 ${p.hide}
             </div>
@@ -279,46 +275,26 @@ function renderProducts1() {
            <hr class="hrshop">
            <div class="price">
            <h4>$${p.price}</h4>
-           <button type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
+           <button id="tocart" type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
            </div>
        </div>
-       </li>
        `
-        shop.innerHTML += productHTML;
-    })
+       shop.appendChild(productHTML);
+    });
 }
 
-function renderProducts2() {
-    const shop2 = document.getElementById("shop2");
-    
-    items2.forEach((p) =>{
-       let productHTML2 = `
-       <li class="prodductimg">
-            <div class=${p.content}>
-                ${p.hide}
-            </div>
-       <img src="${p.img}">
-       <div class="tittleproduct">
-           <h2>${p.name}</h2>
-           <hr class="hrshop">
-           <div class="price">
-           <h4>$${p.price}</h4>
-           <button type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
-           </div>
-       </div>
-       </li>
-       `
-        shop2.innerHTML += productHTML2;
-    })
+renderProducts();
+
+function renderProducts2(number) {
+    for (let i = 1; i <= number; i++) {
+        renderProducts(i);
+    }
 }
-
-
-
 
 
 
 function addProductstoCart(id) {
-    let product = items1.find(product => product.id === id);
+    let product = items.find(product => product.id === id);
 
     let productInCart = cart.find(product => product.id === id);
 
@@ -348,10 +324,7 @@ function renderCart() {
 
     cart.forEach((p, id) => {
         htmlCart += `
-        <div class="minicart" id="cart">
-        <buton type="button"><a href="./cart.html"><i class="bi bi-cart3"><h4>USD</h4></i></a></buton>
-                <h3>+${p.amount}</h3>
-            </div>
+        <h3>+${p.amount + " " + p.name}</h3>
         `
         htmlCart2 += `
         <li class="prodductimg">
@@ -371,7 +344,36 @@ function renderCart() {
     cartHTML2.innerHTML += htmlCart2;
 }
 
-setTimeout (() => {
-    renderProducts2();
-}, 100)
-renderProducts1();
+// pagination
+let offset = 1;
+let limit = 6;
+
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+
+btn1.addEventListener("click", () => {
+    offset -=6;
+    items(offset,limit);
+});
+btn2.addEventListener("click", () => {
+    offset +=6;
+    items(offset,limit);
+});
+
+// toastify
+const btnaddproduct = document.getElementById("tocart");
+
+btnaddproduct.addEventListener("click", () => {
+    Toastify({
+        text: "You have added to the cart",
+        duration: 3000,
+        gravity: "bottom",
+        stopOnFocus: false,
+        destination: "./cart.html",
+        avatar: "./imgs/anadir-a-la-cesta.png",
+        style: {
+            background: "#2f0404",
+          }
+    }).showToast();
+    
+});
