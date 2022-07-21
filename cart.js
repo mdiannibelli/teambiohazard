@@ -365,7 +365,7 @@ const btnaddproduct = document.getElementById("tocart");
 
 btnaddproduct.addEventListener("click", () => {
     Toastify({
-        text: "You have added to the cart",
+        text: "You have added the product to the cart",
         duration: 3000,
         gravity: "bottom",
         stopOnFocus: false,
