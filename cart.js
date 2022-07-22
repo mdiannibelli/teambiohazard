@@ -265,7 +265,7 @@ function renderProducts() {
     items.forEach((p) => {
         const productHTML = document.createElement("li");
         productHTML.classList.add("prodductimg");
-      productHTML.innerHTML = `
+      productHTML.innerHTML += `
             <div class=${p.content}>
                 ${p.hide}
             </div>
@@ -275,11 +275,28 @@ function renderProducts() {
            <hr class="hrshop">
            <div class="price">
            <h4>$${p.price}</h4>
-           <button id="tocart" type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
+           <button id=boton${p.id} type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
            </div>
        </div>
        `
        shop.appendChild(productHTML);
+
+       const btnaddproduct = document.getElementById(`boton${p.id}`)
+       btnaddproduct.addEventListener("click", () => {
+        Toastify({
+            text: "You have added the product to the cart",
+            duration: 3000,
+            gravity: "bottom",
+            stopOnFocus: false,
+            destination: "./cart.html",
+            avatar: "./imgs/anadir-a-la-cesta.png",
+            style: {
+                background: "#2f0404",
+              }
+        }).showToast();
+    
+        
+    });
     });
 }
 
@@ -294,9 +311,9 @@ function renderProducts2(number) {
 
 
 function addProductstoCart(id) {
-    let product = items.find(product => product.id === id);
+    let product = items.find(items => items.id === id);
 
-    let productInCart = cart.find(product => product.id === id);
+    let productInCart = cart.find(items => items.id === id);
 
     if(productInCart) {
         productInCart.amount++;
@@ -313,35 +330,19 @@ function addProductstoCart(id) {
 }
 
 function renderCart() {
-    let cartHTML = document.getElementById("cart");
+    let cartHTML = document.querySelector(".h3cart");
+    
     console.log(cartHTML);
 
-    let cartHTML2 = document.getElementById("cartprodducts");
-    console.log(cartHTML2);
-
     let htmlCart = '';
-    let htmlCart2 = '';
 
     cart.forEach((p, id) => {
         htmlCart += `
         <h3>+${p.amount + " " + p.name}</h3>
         `
-        htmlCart2 += `
-        <li class="prodductimg">
-       <img src="${p.img}">
-       <div class="tittleproduct">
-           <h2>${p.name}</h2>
-           <hr class="hrshop">
-           <div class="price">
-           <h4>$${p.price}</h4>
-           </div>
-       </div>
-       </li>
-        `
     })
 
     cartHTML.innerHTML = htmlCart;
-    cartHTML2.innerHTML += htmlCart2;
 }
 
 // pagination
@@ -360,20 +361,3 @@ btn2.addEventListener("click", () => {
     items(offset,limit);
 });
 
-// toastify
-const btnaddproduct = document.getElementById("tocart");
-
-btnaddproduct.addEventListener("click", () => {
-    Toastify({
-        text: "You have added the product to the cart",
-        duration: 3000,
-        gravity: "bottom",
-        stopOnFocus: false,
-        destination: "./cart.html",
-        avatar: "./imgs/anadir-a-la-cesta.png",
-        style: {
-            background: "#2f0404",
-          }
-    }).showToast();
-    
-});
