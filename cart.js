@@ -256,8 +256,13 @@ const items = [
         `
     }
 ]
-
-const cart = [];
+let cart = [];
+document.addEventListener("DOMContentLoaded", () => {
+    renderProducts();
+    if (localStorage.getItem("cart")) {
+        const storageCart = obtainStorageCart();
+    }
+})
 let total = 0;
 
 function renderProducts() {
@@ -300,7 +305,7 @@ function renderProducts() {
     });
 }
 
-renderProducts();
+
 
 function renderProducts2(number) {
     for (let i = 1; i <= number; i++) {
@@ -312,7 +317,6 @@ function renderProducts2(number) {
 
 function addProductstoCart(id) {
     let product = items.find(items => items.id === id);
-
     let productInCart = cart.find(items => items.id === id);
 
     if(productInCart) {
@@ -326,24 +330,17 @@ function addProductstoCart(id) {
         console.log(cart);
     }
 
-    renderCart();
+    renderCart(cart);
 }
 
-function renderCart() {
-    let cartHTML = document.querySelector(".h3cart");
-    
-    console.log(cartHTML);
+const cartHTML = document.querySelector(".h3cart");
 
-    let htmlCart = '';
+const renderCart = (cart) => {
+    cartHTML.innerText = cart.reduce((acc, item) => acc + item.amount, 0);
 
-    cart.forEach((p, id) => {
-        htmlCart += `
-        <h3>+${p.amount + " " + p.name}</h3>
-        `
-    })
-
-    cartHTML.innerHTML = htmlCart;
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
+
 
 // pagination
 let offset = 1;
@@ -360,4 +357,12 @@ btn2.addEventListener("click", () => {
     offset +=6;
     items(offset,limit);
 });
+
+// obtener carrito storage
+const obtainStorageCart = () => {
+    const storageCart = JSON.parse(localStorage.getItem("cart"));
+
+    return storageCart;
+}
+
 
