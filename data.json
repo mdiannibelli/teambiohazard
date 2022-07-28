@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "name": "Main Shirt",
+      "img": "./imgs/Shirt.jpg",
+      "price": 20,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>64cm</h4>\n        <h4>44cm</h4>\n        <h4>M</h4>\n        <h4>66cm</h4>\n        <h4>46cm</h4>\n        <h4>L</h4>\n        <h4>68cm</h4>\n        <h4>49cm</h4>\n        <h4>XL</h4>\n        <h4>70cm</h4>\n        <h4>52cm</h4>\n        <h4>XXL</h4>\n        <h4>75cm</h4>\n        <h4>56cm</h4>\n        "
+    },
+    {
+      "id": 2,
+      "name": "Face Mask",
+      "img": "./imgs/Facemask.jpg",
+      "price": 4,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>Stay safe and cool with an BZ face mask.</h4>\n        <h4>100% Polyester inlayed with cotton</h4>\n        <h4>Adjustable string straps on each size</h4>\n        <h4>One size fits all</h4>\n        <h4>Stays on while talking</h4>\n        "
+    },
+    {
+      "id": 3,
+      "name": "Wooden Cap",
+      "img": "./imgs/Wooden cap.jpg",
+      "price": 7.5,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>Keep your head warm by this wooden cap in pure sunflower softness!</h4>\n        <h4>Everyone deserves its own daily dose of OG love. They’re so comfy!</h4>\n        <h4>Made with cotton</h4>\n        <h4>Universal size</h4>\n        "
+    },
+    {
+      "id": 4,
+      "name": "Cap",
+      "img": "./imgs/Cap.jpg",
+      "price": 8,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>Enjoy our cap that we use to play in summer!</h4>\n        <h4>Laser perforations strategically optimize breathability on the front and side panels</h4>\n        <h4>Made with recycled polyester fibers</h4>\n        <h4>Adjustable size</h4>\n        "
+    },
+    {
+      "id": 5,
+      "name": "Sport Hoodie",
+      "img": "./imgs/SportHoodie.jpg",
+      "price": 25,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>68cm</h4>\n        <h4>56cm</h4>\n        <h4>M</h4>\n        <h4>70cm</h4>\n        <h4>58cm</h4>\n        <h4>L</h4>\n        <h4>73cm</h4>\n        <h4>60cm</h4>\n        <h4>XL</h4>\n        <h4>76cm</h4>\n        <h4>62cm</h4>\n        <h4>XXL</h4>\n        <h4>79cm</h4>\n        <h4>64cm</h4>\n        "
+    },
+    {
+      "id": 6,
+      "name": "Red Hoodie",
+      "img": "./imgs/RedHoodie.jpg",
+      "price": 21,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>68cm</h4\n        <h4>56cm</h4>\n        <h4>M</h4>\n        <h4>70cm</h4>\n        <h4>58cm</h4>\n        <h4>L</h4>\n        <h4>73cm</h4>\n        <h4>60cm</h4>\n        <h4>XL</h4>\n        <h4>76cm</h4>\n        <h4>62cm</h4>\n        <h4>XXL</h4>\n        <h4>79cm</h4>\n        <h4>64cm</h4>\n        "
+    },
+    {
+      "id": 7,
+      "name": "Black Hoodie",
+      "img": "./imgs/BlackHoodie.jpg",
+      "price": 21,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>68cm</h4>\n        <h4>56cm</h4>\n        <h4>M</h4>\n        <h4>70cm</h4>\n        <h4>58cm</h4>\n        <h4>L</h4>\n        <h4>73cm</h4>\n        <h4>60cm</h4>\n        <h4>XL</h4>\n        <h4>76cm</h4>\n        <h4>62cm</h4>\n        <h4>XXL</h4>\n        <h4>79cm</h4>\n        <h4>64cm</h4>\n        "
+    },
+    {
+      "id": 8,
+      "name": "White Hoodie",
+      "img": "./imgs/WhiteHoodie.jpg",
+      "price": 21,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>68cm</h4>\n        <h4>56cm</h4>\n        <h4>M</h4>\n        <h4>70cm</h4>\n        <h4>58cm</h4>\n        <h4>L</h4>\n        <h4>73cm</h4>\n        <h4>60cm</h4>\n        <h4>XL</h4>\n        <h4>76cm</h4>\n        <h4>62cm</h4>\n        <h4>XXL</h4>\n        <h4>79cm</h4>\n        <h4>64cm</h4>\n        "
+    },
+    {
+      "id": 9,
+      "name": "Jacket",
+      "img": "./imgs/Jacket.jpg",
+      "price": 46,
+      "amount": 1,
+      "content": "hiddencontent",
+      "hide": "\n        <h3>SIZE</h3>\n        <h3>H</h3>\n        <h3>W</h3>\n        <h4>S</h4>\n        <h4>68cm</h4>\n        <h4>56cm</h4>\n        <h4>M</h4>\n        <h4>70cm</h4>\n        <h4>58cm</h4>\n        <h4>L</h4>\n        <h4>73cm</h4>\n        <h4>60cm</h4>\n        <h4>XL</h4>\n        <h4>76cm</h4>\n        <h4>62cm</h4>\n        <h4>XXL</h4>\n        <h4>79cm</h4>\n        <h4>64cm</h4>\n        "
+    },
+    {
+      "id": 10,
+      "name": "Drink Ware",
+      "img": "./imgs/Drinkware.jpg",
+      "price": 5.5,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>High quality drinkware.</h4>\n        <h4>Include BZ Esports logo</h4>\n        <h4>Metal and soft PVC</h4>\n        <h4>Customizable color</h4>\n        "
+    },
+    {
+      "id": 11,
+      "name": "Keychain",
+      "img": "./imgs/Keychain.jpg",
+      "price": 2,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>High quality keychain.</h4>\n        <h4>Include BZ Esports logo</h4>\n        <h4>Metal and soft PVC</h4>\n        <h4>Customizable color</h4>\n        "
+    },
+    {
+      "id": 12,
+      "name": "Pin",
+      "img": "./imgs/Pin.jpg",
+      "price": 1.5,
+      "amount": 1,
+      "content": "hiddencontent2",
+      "hide": "\n        <h4>High quality pin.</h4>\n        <h4>Include BZ Esports logo</h4>\n        <h4>Metal and soft PVC</h4>\n        <h4>Customizable color</h4>\n        "
+    }
+  ]
