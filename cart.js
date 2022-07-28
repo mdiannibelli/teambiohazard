@@ -1,9 +1,13 @@
 // Cart 
 const API = "./data.json";
 const getData = async () => {
+    try {
         const response = await fetch(API)
         const data = await response.json();
-   return data;
+        return data;
+    } catch (error) {
+        console.log("There was an error in the request", error);
+    }
 }
 let cart = [];
 document.addEventListener("DOMContentLoaded", () => {
