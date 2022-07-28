@@ -263,7 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const storageCart = obtainStorageCart();
     }
 })
-let total = 0;
 
 function renderProducts() {
     const shop = document.getElementById("shop");
@@ -280,7 +279,7 @@ function renderProducts() {
            <hr class="hrshop">
            <div class="price">
            <h4>$${p.price}</h4>
-           <button id=boton${p.id} type="button" class="btn btn-dark" onClick="addProductstoCart(${p.id})"><i class="bi bi-cart-plus"></i></button>
+           <button id=boton${p.id} type="button" class="btn btn-dark"><i class="bi bi-cart-plus"></i></button>
            </div>
        </div>
        `
@@ -288,6 +287,7 @@ function renderProducts() {
 
        const btnaddproduct = document.getElementById(`boton${p.id}`)
        btnaddproduct.addEventListener("click", () => {
+        addProductstoCart(p.id);
         Toastify({
             text: "You have added the product to the cart",
             duration: 3000,
@@ -303,14 +303,6 @@ function renderProducts() {
         
     });
     });
-}
-
-
-
-function renderProducts2(number) {
-    for (let i = 1; i <= number; i++) {
-        renderProducts(i);
-    }
 }
 
 
@@ -331,32 +323,57 @@ function addProductstoCart(id) {
     }
 
     renderCart(cart);
+    totalPrice();
 }
 
 const cartHTML = document.querySelector(".h3cart");
 
-const renderCart = (cart) => {
-    cartHTML.innerText = cart.reduce((acc, item) => acc + item.amount, 0);
-
+const renderCart = () => {
+    cartHTML.innerText = cart.reduce((acc, item) => acc + item.amount, 0    );
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    const maincart = document.getElementById("cartwproducts");
+    let cartProduct = ``;
+    cart.forEach((p, id)=> {
+        cartProduct += `
+        <li class="prodductimg2">
+   <img src="${p.img}" class="pimg">
+   <div class="tittleproduct2">
+       <h2>${p.name}</h2>
+       <div class="price2">
+       <h4>$${p.price}</h4>
+       <h4>(${p.amount})</h4>
+       <button  type="button" class="btn btn-dark" onclick="deleteProductCart(${id})"><i class="bi bi-x-circle"></i></button>
+       </div>
+   </div>
+   </li>
+   `
+}) 
+ maincart.innerHTML = cartProduct;
 }
 
+// eliminar producto
+function deleteProductCart(id) {
+    cart[id].amount--;
 
-// pagination
-let offset = 1;
-let limit = 6;
+    if(cart[id].amount === 0) {
+        cart.splice (id, 1)
+    }
+    renderCart(cart);
+}
+// calcular total
+function totalPrice() {
+    let total = 0;
 
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
+    cart.forEach((p)=> {
+        total += p.price * p.amount;
+    });
 
-btn1.addEventListener("click", () => {
-    offset -=6;
-    items(offset,limit);
-});
-btn2.addEventListener("click", () => {
-    offset +=6;
-    items(offset,limit);
-});
+    const t = document.getElementById("precioTotal");
+
+    t.innerHTML = `<h5>$${total}</h5>`;
+}
+
 
 // obtener carrito storage
 const obtainStorageCart = () => {
