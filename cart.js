@@ -42,6 +42,7 @@ const renderProducts = async () => {
 
        const btnaddproduct = document.getElementById(`boton${p.id}`)
        btnaddproduct.addEventListener("click", () => {
+        buttoncheckout.style.display = "flex";
         addProductstoCart(p.id);
         Toastify({
             text: "You have added the product to the cart",
@@ -139,3 +140,5 @@ const obtainStorageCart = () => {
 }
 
 
+// button checkout
+const buttoncheckout = document.getElementById("buttoncheckout"); 

@@ -731,3 +731,18 @@ body {
     margin: 0;
 }
 
+.checkout .preproducts button {
+    display: none;
+    font-size: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-bg: #2f0404;
+    --bs-btn-border-radius: 0rem;
+    
+}
+.checkout .preproducts button a {
+text-decoration: none;
+color: #dac6c6;
+} 
