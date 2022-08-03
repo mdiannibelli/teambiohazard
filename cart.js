@@ -62,13 +62,13 @@ const renderProducts = async () => {
 }
 
 
-
 const  addProductstoCart = async (id) => {
     const items = await getData();
     let product = items.find(items => items.id === id);
     let productInCart = cart.find(items => items.id === id);
-
-    if(productInCart) {
+    
+    productInCart ? productInCart.amount++ & console.log(cart) : console.log(cart) &  cart.push(product);  product.amount = 1;
+    /* if(productInCart) {
         productInCart.amount++;
 
         console.log(cart);
@@ -77,7 +77,7 @@ const  addProductstoCart = async (id) => {
         cart.push(product);
 
         console.log(cart);
-    }
+    } */
 
     renderCart(cart);
     totalPrice();
@@ -112,10 +112,10 @@ const renderCart = () => {
 // eliminar producto
 function deleteProductCart(id) {
     cart[id].amount--;
-
-    if(cart[id].amount === 0) {
+    cart[id].amount === 0 && cart.splice (id, 1);
+    /* if(cart[id].amount === 0) {
         cart.splice (id, 1)
-    }
+    } */
     renderCart(cart);
 }
 // calcular total
