@@ -424,6 +424,8 @@ body {
     margin-bottom: 0;
 }
 
+/* SHOP */
+
 .preshop img {
     width: 100%;
 }
@@ -668,7 +670,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 2rem;
-    color: #910707;
+    color: #e90404;
     margin-bottom: 25px;
 }
 
@@ -746,3 +748,109 @@ body {
 text-decoration: none;
 color: #dac6c6;
 } 
+
+/* NEWS */
+
+.news {
+    margin-top: 30px;
+}
+
+.news_tittle {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.h1news {
+    border-bottom: 10px solid #550808;
+}
+
+.featured_news {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
+
+.news_content {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+}
+
+.anew {
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+}
+
+.newimg_container {
+    position: relative;
+    overflow: hidden;
+}
+
+.new_img {
+    width: auto;
+    opacity: 0.4;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.newtext_container {
+    position: absolute;
+    left: 0;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    padding: 10px 10px 27px;
+    margin-left: 20px;
+}
+
+.h1new {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.pnew p {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.group_news1 .new .anew .newimg_container img {
+    object-fit: cover;
+    width: 800px;
+    height: 520px;
+}
+
+.group_news2 {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 420px 420px;
+    gap: 12px;
+}
+
+.group_news2 .new .anew .newimg_container img {
+    width: 100%;
+    height: 260px;
+}
+
+.group_news2 .new .anew .newimg_container .newtext_container .h1new {
+    font-size: 1rem;
+}
+
+.group_news2 .new .anew .newimg_container .newtext_container .pnew p {
+    font-size: 0.8rem;
+}
+
+.new_img:hover {
+    transform: scale(1.15);
+}
